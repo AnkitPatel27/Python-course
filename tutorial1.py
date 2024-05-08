@@ -53,21 +53,26 @@
 #   print("")
 
 # # Print the Fibonacci sequence up to the 10th term using a while loop:
-# a, b = 0, 1
+# first, second = 0, 1
+# x = int(input("Enter the number of terms: "))
 # count = 0
-# while count < 10:
-#     print(a, end=" ")
-#     a = b
-#     b =a + b
-#     count += 1
+# for i in range(x):
+#     print(first, end=" ")
+#     next = first+second
+#     first = second
+#     second = next
 
-# # Find the common elements in two lists using a for loop:
-# list1 = [1, 2, 3, 4, 5]
-# list2 = [3, 4, 5, 6, 7]
+
+
+# # Find the common elements in two lists using :
+# list1 = [1, 2, 3, 5,4]
+# list2 = [3, 5, 6, 7, 4]
 # common_elements = []
+#
 # for element in list1:
 #     if element in list2:
 #         common_elements.append(element)
+#
 # print(common_elements)
 # '''
 # Number Guessing Game:
@@ -79,28 +84,27 @@
 # '''
 # import random
 # target_number = random.randint(1, 100)
-
-# # Initialize variables
+#
+# # # Initialize variables
 # attempts = 0
 # guessed = False
-
-# # Start the game loop
-# while not guessed:
+#
+# # # Start the game loop
+# while True:
 #     # Get user input
-#     guess = int(input("Guess the number (between 1 and 100): "))
+#     user_guess = int(input("Guess the number (between 1 and 100): "))
 #     attempts += 1
-
 #     # Check if the guess is correct
-#     if guess == target_number:
+#     if user_guess == target_number:
 #         print(f"Congratulations! You guessed the number {target_number} correctly in {attempts} attempts.")
-#         guessed = True
-#     # Provide hints
-#     elif guess < target_number:
+#         break
+#     elif user_guess < target_number:
 #         print("Higher")
 #     else:
 #         print("Lower")
 
-# # Write a Python program that checks if a given number num is prime or not. Use a while loop to check divisibility by all numbers from 2 to the square root of num. Print "Prime" if it's prime, otherwise print "Not Prime".
+# # Write a Python program that checks if a given number num is prime or not. Use a while loop to check divisibility by all numbers from 2
+# to the square root of num. Print "Prime" if it's prime, otherwise print "Not Prime".
 # import math
 # num=int(input("Enter a number to check if it's prime: "))
 # if num <= 1:
@@ -112,7 +116,7 @@
 #     i = 2
 #     while i <= math.isqrt(num):
 #         if num % i == 0:
-#             print("Not Prime")
+#             print("Not Prime because the number "+str(i)+" divides num")
 #         i += 1
 #     print("Prime")
 
@@ -121,15 +125,18 @@
 # # Then, print the corresponding letter grade according to the following scale: A (90-100), B (80-89),
 # # C (70-79), D (60-69), F (below 60). Use if-else statements to determine the grade.
 # # Prompt the user to enter five test scores
+# integerList = []
+
+#
 # test_scores = []
 # for i in range(5):
 #     score = float(input(f"Enter test score {i+1}: "))
 #     test_scores.append(score)
-
-# # Calculate the average of the test scores
+#
+# # # Calculate the average of the test scores
 # average_score = sum(test_scores) / len(test_scores)
-
-# # Determine the letter grade based on the average score
+#
+# # # Determine the letter grade based on the average score
 # if average_score >= 90:
 #     letter_grade = 'A'
 # elif average_score >= 80:
@@ -168,54 +175,11 @@
 # else:
 #     print("The string is not a palindrome.")
 
+a = input("Enter a string: ")
+reversed_a = a[::-1]
 
-def findop(str):
-    if str.find("*"):
-        return "*"
-    if str.find("-"):
-        return "-"
-    if str.find("+"):
-        return "+"
-    if str.find("/"):
-        return "/"
-    
-def giveOppositeOperator(str):
-    if str.find("*"):
-        return "/"
-    if str.find("-"):
-        return "+"
-    if str.find("+"):
-        return "-"
-    if str.find("/"):
-        return "*"
-    
-def calcNum(str):
-    op = findop(str)
-    y = str.split(op).trim()
-    y[0] = int(y[0])
-    y[1] = int(y[1])
-    if op=='+':
-        return y[0]+y[1]
-    if op=='-':
-        return y[0]-y[1]
-    if op=='*':
-        return y[0]*y[1]
-    if op=='/':
-        return y[0]/y[1]
-
-
-
-s = "x+1=10"
-
-x =s.split("=")
-print(x)
-
-if x[0].find("*") or x[0].find("-")  or x[0].find("+")  or x[0].find("/"):
-    if x[0].find('x'):
-        op = findop(x[0])
-        y = x[0].split(op).trim()
-        x[1] = x[1]+giveOppositeOperator(op)+y[1]
-
-a = calcNum(x[1])
-print(a)
+if a==reversed_a:
+    print("The string is a palindrome.")
+else:
+    print("The string is not a palindrome.")
 

@@ -1,10 +1,3 @@
-#
-
-##############################################################################################
-# ways to name a variable or function
-name_of_person = "John" # snake_case - seperated by underscore and all lower case
-nameOfPerson = "John"   # camelCase  - first word is lower case and then every first letter of the next word is upper case
-NameOfPerson = "John"   # PascalCase - first letter of every word is upper case
 
 ##############################################################################################
 #Function definition
@@ -12,6 +5,7 @@ NameOfPerson = "John"   # PascalCase - first letter of every word is upper case
 # the code inside each function is indented by exactly one TAB space from the current indentation
 def say_hi():
     print("Hello");
+
 
 
 print("Top")
